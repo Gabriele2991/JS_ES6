@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 13 destructuring and Obj in ES6</title>
+</head>
+<body>
+    <table id = "usersValue" border="1px solid black"></table>
+    <script>
+        const table = document.getElementById("usersValue");
+        var userList = {
+            "people": [
+                {   
+                    firstName: "Fred",
+                    lastName: "Smith",
+                    dateOfBirth: 1980,
+                    spokenLanguages: {
+                        native: "English",
+                        fluent: "Spanish",
+                        intermediate: "Chinese"
+                    }
+                },
+                { 
+                    firstName: "Monica",
+                    lastName: "Taylor",
+                    dateOfBirth: 1975,
+                    spokenLanguages: {
+                        native: "Spanish",
+                        fluent: "English",
+                        intermediate: "French"
+                    }
+                },
+                {   
+                    firstName: "Maurice",
+                    lastName: "Edelson",
+                    dateOfBirth: 1992,
+                    spokenLanguages: {
+                        native: "English",
+                        fluent: "Spanish",
+                    }
+                // JAVASCRIPT FOR APPLICATION DEVELOPMENT PAGE 8
+                },
+                {   
+                    firstName: "Kelly",
+                    lastName: "Lang",
+                    dateOfBirth: 1982,
+                    spokenLanguages: {
+                        native: "English",
+                        fluent: "German",
+                        intermediate: "Dutch"
+                    }
+                }
+            ]
+        };
+        var {people} = userList;
+        console.log(people.length);
+        console.log(people.entries());
+        for (let i = 0; i < people.length; i++) {
+            const tableRow = table.insertRow();
+            for (const [key,value]of people.entries()) {
+                const element = array[i];
+                
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>
