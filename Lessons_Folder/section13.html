@@ -55,13 +55,21 @@
             ]
         };
         var {people} = userList;
-        console.log(people.length);
-        console.log(people.entries());
+        
         for (let i = 0; i < people.length; i++) {
             const tableRow = table.insertRow();
-            for (const [key,value]of people.entries()) {
-                const element = array[i];
-                
+            for (let [key, value] of Object.entries(people[i])) {
+                const tableCell = tableRow.insertCell();
+                if(key == "spokenLanguages"){
+                    const unorderedList = tableCell.appendChild(document.createElement("ul"));
+                    for(let value in Object.keys(people[i].spokenLanguages)){
+                        const list = unorderedList.appendChild(document.createElement("li"));
+                        list.appendChild(document.createTextNode(`${key} : ${value}`));
+                    }
+                }else{
+                    tableCell.appendChild(document.createTextNode(`${key} : ${value}`))
+                }
+                console.log(`Key: ${key}, Value:${value}`)
             }
             
         }
