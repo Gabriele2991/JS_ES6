@@ -1,0 +1,133 @@
+<!-- <div id = "output">
+    <script>
+        // let team = new Map();
+        // team.set("pitcher", "David");
+        // team.set("catcher", "jeorge");
+        // team.set("right_field", "Dave");
+        // alert(team.get("right_field"));
+
+        // let music = new Map();
+        // music.set("Journey", "Faithfully")
+        // .set("Reo","keep on Rolling")
+        // .set("Scandal", "The warrior");
+        // alert(music.get("Scandal"));
+
+        let family = new Map([
+            ["mother","Joan"],
+            ["father","Rick"],
+            ["brother","Brett"],
+            ["sil","kerry"],
+        ]);
+        // alert(family.get("sil"));
+        for (let r  of family.entries()) {
+            alert(r[0] +" : "+ r[1]);
+        }
+    </script>
+</div> -->
+
+<!-- <!DOCTYPE html>
+<html>
+ <head>
+ <title>Map Exercise</title>
+ </head>
+ <body>
+ <h1>Add to the Map</h1>
+ <label for="name">Name</label>
+ <input type="text" id="name" /><br/>
+ <label for="numericalGrade">Grade</label>
+ <input type="number" min="0" max="100" id="numericalGrade"/><br/>
+ <button id= "btnToAddToMap">Add to Map Object</button>
+ <button id="btnDisplayMap">Display Map</button>
+ <div id="result"></div>
+
+    <script>
+        const ADDBUTTON = document.getElementById("btnToAddToMap");
+        const DISPLAYBUTTON = document.getElementById("btnDisplayMap");
+        let grades = new Map();
+        ADDBUTTON.onclick = function(){
+            const name = document.getElementById("name");
+            const grade = document.getElementById("numericalGrade");
+            grades.set(name.value, grade.value);
+            console.log(name.value,grade.value)
+            name.value = "";
+            grade.value = "";
+        };
+
+        DISPLAYBUTTON.onclick = function(){
+            let out = "";
+            for(let x of grades.entries())
+            {
+                out += x[0] + ": " + x[1];
+                out += "<br/>";
+            }
+    //JAVASCRIPT FOR APPLICATION DEVELOPMENT PAGE 8
+        document.getElementById("result").innerHTML = out;
+        }
+    </script>
+ </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section10 exercise</title>
+</head>
+<body>
+    <h1>
+        Give people work to accomplish
+    </h1>
+    <label for="name">Name</label>
+    <input type="text" id="name"><br/> 
+
+    <label for="chores">Work</label>
+    <input list="Chores" id="chores">
+    <datalist id="Chores">
+        <option value="Front Room Sweep"></option>
+        <option value="Back Room Sweep"></option>
+        <option value="Outside Grounds"></option>
+        <option value="Clean Toilet"></option>
+        <option value="Clean Sink"></option>
+        <option value="Trash Patrol and Supplies"></option>
+    </datalist>
+    <br/>
+    <button id= "btnToAddToMap">Add to Map Object</button>
+    <button id="btnDisplayMap">Display Map</button>
+
+    <div id="result"></div>
+    <script>
+        const AddButton = document.getElementById("btnToAddToMap");
+        const ShowButton = document.getElementById("btnDisplayMap");
+        const mapValues = new Map();
+        
+        AddButton.onclick = ()=> {
+            const name = document.getElementById("name");
+            const chore = document.getElementById("chores");
+            console.log("Name: "+ name.value +", Chore: "+chore.value);
+
+            if(name.value == "" || chore.value == ""){
+                alert("Chose a value for the name or the chore");
+                return;
+            }
+            mapValues.set(chore.value, name.value);
+            name.value = "";
+            chore.value = "";
+        }
+
+        ShowButton.onclick = ()=>{
+            let out = "";
+            for (let value of mapValues.entries()) {
+                out += value[0] +" is assigned to " + value[1];
+                out += "<br/>";
+            }
+            
+            if(out == ""){
+                out = "No values stored";
+            }
+            document.getElementById("result").innerHTML = out;
+        }
+
+    </script>
+</body>
+</html>
